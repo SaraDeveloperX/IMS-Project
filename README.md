@@ -11,7 +11,7 @@ Real-Time AIS and Weather Fusion with Transformer-Based Maritime Risk Forecastin
 ## Maritime Map
 
 <p align="center">
-  <img src="Docs/map-demo.png" width="92%">
+  <img src="Docs/map-demo.jpg" width="92%">
 </p>
 
 The IMS dashboard provides real-time AIS vessel positioning combined with high-resolution weather data through a MapLibre-based interface. The system supports situational awareness by integrating dynamic vessel movements and short-range environmental conditions.
