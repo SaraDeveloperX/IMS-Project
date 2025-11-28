@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+:root {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --panel-rgb: 24 35 61;
+  --text: #eaf2ff;
+  --muted: #9fb4d1;
+  --brand:  #7cc4ff;
+  --brand-2:#4ea4ff;
+  --risk-high: #ff6b6b;
+  --risk-med:  #ffd166;
+  --risk-low:  #4ade80;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  @apply antialiased;
+}
+
+*::selection { background: rgba(124,196,255,.25); color: #fff; }
+
+a { @apply transition-colors duration-200; }
+a:hover { color: #ffffff; }
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124,196,255,.35);
+  border-radius: 10px;
+}
+
+h1,h2,h3 { font-weight: 600; letter-spacing:.01em; }
+p,span,label { font-weight: 400; letter-spacing:.005em; }
+.text-muted { color: rgba(255,255,255,.72); }
+
+.card{
+  @apply rounded-xl border border-white/5 backdrop-blur-md;
+  background: rgba(var(--panel-rgb) / .68);
+  box-shadow: var(--shadow);
+}
+.btn{
+  @apply inline-flex items-center justify-center gap-2 px-4 h-11 rounded-lg font-medium transition;
+  background: linear-gradient(180deg, #2a3f6b, #213358);
+}
+.btn:hover { filter: brightness(1.08); }
+
+.input{
+  @apply w-full h-11 rounded-lg px-3 outline-none border border-white/10 text-white text-[15px];
+  background: rgba(20,35,61,.6);
+}
+.input::placeholder{ color: var(--muted); opacity:.9; }
+
+.btn-ghost{
+  @apply text-xs px-2.5 h-7 rounded-md border border-white/10 hover:bg-white/5;
+}
+
+.topline {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+  height: 1px; width: 100%;
+}
+
+.grain{
+  background-image:
+    radial-gradient(1px 1px at 25% 25%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0) 100%),
+    radial-gradient(1px 1px at 75% 75%, rgba(0,0,0,0.25) 0, rgba(0,0,0,0) 100%);
+  background-size: 200px 200px, 260px 260px;
+}
+
+*::-webkit-scrollbar { height:10px; width:10px; }
+*::-webkit-scrollbar-thumb { background: rgba(255,255,255,.12); border-radius: 9999px; }
+*::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.2); }
+
+.badge {
+  @apply text-xs px-2 py-1 rounded-md border border-white/10 bg-white/10;
+}
+.risk-high { background: color-mix(in oklab, var(--risk-high) 22%, transparent); }
+.risk-med  { background: color-mix(in oklab, var(--risk-med) 22%,  transparent); }
+.risk-low  { background: color-mix(in oklab, var(--risk-low) 22%,  transparent); }
+
+.card { border-radius: 14px }
+.grain { background: radial-gradient(1200px 600px at 20% -10%, #0d1a2b 0%, transparent 60%),
+                    radial-gradient(1000px 500px at 120% 10%, #0b1a30 0%, transparent 60%),
+                    #10233e; }
+
+@import "tailwindcss";
+
+:root { color-scheme: dark; }
+html, body, #__next { height: 100%; }
+body { @apply bg-[#0E1B2F] text-white antialiased; }
+
+.card { @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl; }
+
+.grain {
+  background-image:
+    radial-gradient(1px 1px at 25% 25%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0) 100%),
+    radial-gradient(1px 1px at 75% 75%, rgba(0,0,0,0.2) 0, rgba(0,0,0,0) 100%);
+  background-size: 220px 220px, 280px 280px;
+}
+
+.marine-map { position: relative; width: 100%; height: calc(100vh - 96px); border-radius: 18px; overflow: hidden; }
+
+.hud {
+  position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+  width: 68px; height: 68px; border-radius: 9999px;
+  backdrop-filter: blur(10px);
+  background: rgba(18, 28, 48, 0.35);
+  border: 1px solid rgba(255,255,255,.15);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 0 20px rgba(123,198,255,.12);
+}
+
+.north-pill {
+  position:absolute; left:16px; bottom:20px;
+  width:28px; height:28px; border-radius:9999px;
+  background: rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.15);
+  display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+.maplibregl-map,
+.maplibregl-canvas-container,
+.maplibregl-canvas {
+  background: transparent !important;
+}
+\.maplibregl-map,
+.maplibregl-canvas-container,
+.maplibregl-canvas {
+  background: transparent !important;
+}

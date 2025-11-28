@@ -1,0 +1,24 @@
+{
+  "name": "Intelligent Maritime System",
+  "short_name": "IMS",
+  "description": "A smart maritime PWA for captains and operators with live AIS, weather, and risk alerts.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1220",
+  "theme_color": "#1d3455",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/ims-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ims-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
